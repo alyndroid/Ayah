@@ -1,0 +1,61 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>com.hamalawy.Ayah</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <name>Ayah</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor email="ali96nasser@gmail.com" url="https://www.yourcompany.com">Coding With Nerds</vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <description>
+        <![CDATA[
+        <h1>Ayah Plugin</h1>
+        <p>Enhance your coding experience with the Ayah Plugin for IntelliJ IDEA. This plugin provides an interactive way to display a verse (Aya) from the Quran in a dialog box each time you start a new session. Choose between displaying verses in a random order or sequentially to suit your preferences.</p>
+
+        <h2>Features:</h2>
+        <ul>
+            <li><strong>Verse Display:</strong> Shows a verse from the Quran in a user-friendly dialog box.</li>
+            <li><strong>Random or Sequential Order:</strong> Choose to display verses in a random order or sequentially, based on your preference.</li>
+            <li><strong>Session-Based:</strong> Each new session will show a different verse, providing a fresh and engaging experience every time.</li>
+            <li><strong>Settings Management:</strong> Easily switch between random and sequential display modes through the plugin settings.</li>
+        </ul>
+
+        <h2>Usage:</h2>
+        <p>Upon starting IntelliJ IDEA, the Ayah Plugin will automatically display a dialog box with a verse from the Quran. Click the 'Next Aya' button to view the next verse in your chosen order. You can configure the display mode (random or sequential) via the plugin settings.</p>
+
+        <h2>Installation:</h2>
+        <ol>
+            <li>Open IntelliJ IDEA and navigate to the <strong>Plugins</strong> section from the settings menu.</li>
+            <li>Search for <strong>Ayah Plugin</strong> and click <strong>Install</strong>.</li>
+            <li>Restart IntelliJ IDEA to activate the plugin.</li>
+        </ol>
+
+        <h2>Configuration:</h2>
+        <p>To configure the plugin, navigate to <strong>File > Settings > Other Settings > Ayah Plugin</strong>. Here you can choose between random or sequential verse display modes.</p>
+
+        <h2>Feedback:</h2>
+        <p>If you encounter any issues or have suggestions for improvement, please contact us via the plugin’s support page.</p>
+        ]]>
+    </description>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <projectConfigurable instance="com.hamalawy.ayah.PluginSettingsConfigurable" displayName="Ayat Settings" />
+        <postStartupActivity implementation="com.hamalawy.ayah.MyStartupActivity"/>
+    </extensions>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+
+    </extensions>
+</idea-plugin>
